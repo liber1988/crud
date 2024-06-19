@@ -7,7 +7,10 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-logo">
         <Link to="/">
-          <img src="../../public/logo-1.svg" alt="" />
+          <img
+            src="https://img.freepik.com/premium-vector/men-s-shoe-logo-design-running-sports-logo-shoe-shop-fashion-business_661039-2524.jpg"
+            alt=""
+          />
         </Link>
       </div>
       <div className="navbar-links">
