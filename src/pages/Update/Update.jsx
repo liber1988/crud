@@ -1,72 +1,70 @@
 import React from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { useApiContext } from "../../context/ApiContext";
 
 function Update() {
+  const { shoes, getShoe, updateShoe } = useApiContext();
   const { id } = useParams();
-  // const [data, setData] = useState([]);
-  const [values, setValues] = useState({
-    name: "",
-    email: "",
-    phone: "",
-  });
   const navigate = useNavigate();
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/users/" + id)
-      .then((res) => setValues(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+  const shoe = shoes.find((shoe) => shoe.id === id);
+  const [values, setValues] = useState(shoe);
 
   const handleUpdate = (event) => {
     event.preventDefault();
-
-    axios
-      .put("http://localhost:3000/users/" + id, values)
-      .then((res) => {
-        console.log(res);
-        navigate("/");
-      })
-      .catch((err) => console.log(err));
+    updateShoe(values);
+    navigate("/");
   };
 
   return (
     <div className="d-flex w-100 vh-100 justify-content-center align-items-center bg-light">
       <div className="w-50 border bg-white shadow px-5 pt-3 pb-5 rounded">
-        <h1>Update a User</h1>
+        <h1>Update Shoe</h1>
         <form onSubmit={handleUpdate}>
           <div className="mb-2">
-            <label htmlFor="name">Name:</label>
+            <label htmlFor="model">Model:</label>
             <input
               type="text"
-              name="name"
+              name="model"
               className="form-control"
-              placeholder="Enter Name"
-              value={values.name}
-              onChange={(e) => setValues({ ...values, name: e.target.value })}
+              placeholder="Enter model"
+              value={values.model}
+              onChange={(e) => setValues({ ...values, model: e.target.value })}
             />
           </div>
           <div className="mb-2">
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="company">Company</label>
             <input
-              type="email"
-              name="email"
+              type="text"
+              name="company"
               className="form-control"
-              placeholder="Enter Email"
-              value={values.email}
-              onChange={(e) => setValues({ ...values, email: e.target.value })}
+              placeholder="Enter Company"
+              value={values.company}
+              onChange={(e) =>
+                setValues({ ...values, company: e.target.value })
+              }
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="email">Phone:</label>
+            <label htmlFor="price">Price:</label>
             <input
               type="text"
-              name="phone"
+              name="price"
               className="form-control"
-              placeholder="Enter Phone"
-              value={values.phone}
-              onChange={(e) => setValues({ ...values, phone: e.target.value })}
+              placeholder="Enter Price"
+              value={values.price}
+              onChange={(e) => setValues({ ...values, price: e.target.value })}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="image">Image Link</label>
+            <input
+              type="text"
+              name="image"
+              className="form-control"
+              placeholder="Enter Image Link"
+              value={values.image}
+              onChange={(e) => setValues({ ...values, image: e.target.value })}
             />
           </div>
           <button className="btn btn-success">Update</button>

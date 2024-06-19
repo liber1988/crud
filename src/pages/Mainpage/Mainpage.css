@@ -1,0 +1,44 @@
+/* Home.css */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+.home-content {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.home-content h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.home-images {
+  display: flex;
+  gap: 1rem;
+}
+
+.home-image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.home-image:hover {
+  transform: scale(1.05);
+}

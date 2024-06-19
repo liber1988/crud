@@ -1,0 +1,63 @@
+.card {
+  width: 300px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: linear-gradient(to bottom, #df03af, #5a0235);
+  position: relative; /* For positioning the buttons */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.card:hover {
+  background: linear-gradient(to bottom, #df03af, #b10469);
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  color: aliceblue;
+}
+
+.card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: aliceblue;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  right: 15px;
+}
+
+.card-button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4a13c9; /* Green button */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.card-button:hover {
+  background-color: #d46013; /* Darker green on hover */
+}
+
+.card-button.update {
+  background-color: #3e0446; /* Blue button */
+}
+
+.card-button.update:hover {
+  background-color: #e27006; /* Darker blue on hover */
+}

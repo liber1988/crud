@@ -1,59 +1,76 @@
-import axios from "axios";
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useApiContext } from "../../context/ApiContext";
+
 function Create() {
   const [values, setValues] = useState({
-    name: "",
-    email: "",
-    phone: "",
+    company: "",
+    image: "",
+    model: "",
+    price: "",
   });
   const navigate = useNavigate();
-  const handleSubmit = (event) => {
+  const { catchShoe } = useApiContext();
+  console.log(values);
+  const handleUpdate = (event) => {
     event.preventDefault();
-    axios
-      .post("http://localhost:3000/users", values)
-      .then((res) => {
-        console.log(res);
-        navigate("/");
-      })
-      .catch((err) => console.log(err));
+    catchShoe(values);
+    navigate("/");
   };
+
   return (
     <div className="d-flex w-100 vh-100 justify-content-center align-items-center bg-light">
       <div className="w-50 border bg-white shadow px-5 pt-3 pb-5 rounded">
-        <h1>Add a User</h1>
-        <form onSubmit={handleSubmit}>
+        <h1>Update Shoe</h1>
+        <form onSubmit={handleUpdate}>
           <div className="mb-2">
-            <label htmlFor="name">Name:</label>
+            <label htmlFor="model">Model:</label>
             <input
               type="text"
-              name="name"
+              name="model"
               className="form-control"
-              placeholder="Enter Name"
-              onChange={(e) => setValues({ ...values, name: e.target.value })}
+              placeholder="Enter model"
+              value={values.model}
+              onChange={(e) => setValues({ ...values, model: e.target.value })}
             />
           </div>
           <div className="mb-2">
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="company">Company</label>
             <input
-              type="email"
-              name="email"
+              type="text"
+              name="company"
               className="form-control"
-              placeholder="Enter Email"
-              onChange={(e) => setValues({ ...values, email: e.target.value })}
+              placeholder="Enter Company"
+              value={values.company}
+              onChange={(e) =>
+                setValues({ ...values, company: e.target.value })
+              }
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="email">Phone:</label>
+            <label htmlFor="price">Price:</label>
             <input
               type="text"
-              name="phone"
+              name="price"
               className="form-control"
-              placeholder="Enter Phone"
-              onChange={(e) => setValues({ ...values, phone: e.target.value })}
+              placeholder="Enter Price"
+              value={values.price}
+              onChange={(e) => setValues({ ...values, price: e.target.value })}
             />
           </div>
-          <button className="btn btn-success">Submit</button>
+          <div className="mb-3">
+            <label htmlFor="image">Image Link</label>
+            <input
+              type="text"
+              name="image"
+              className="form-control"
+              placeholder="Enter Image Link"
+              value={values.image}
+              onChange={(e) => setValues({ ...values, image: e.target.value })}
+            />
+          </div>
+          <button className="btn btn-success">Update</button>
           <Link to="/" className="btn btn-primary ms-3">
             Back
           </Link>
@@ -62,4 +79,5 @@ function Create() {
     </div>
   );
 }
+
 export default Create;
