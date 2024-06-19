@@ -1,0 +1,20 @@
+.form-control {
+  text-align: left; /* Ensure text alignment is left */
+}
+
+label {
+  text-align: left; /* Ensure label alignment is left */
+  width: 100%;
+}
+
+.main-form {
+  background: linear-gradient(to bottom, #9433e4, #33011e);
+}
+form {
+  color: rgb(1, 36, 24);
+  font-weight: bold;
+  color: blue;
+  background-color: #766488;
+  padding: 20px;
+  border-radius: 25px;
+}

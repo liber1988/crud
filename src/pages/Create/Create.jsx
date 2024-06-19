@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useApiContext } from "../../context/ApiContext";
-
+import "./Create.css";
 function Create() {
   const [values, setValues] = useState({
     company: "",
@@ -18,11 +18,10 @@ function Create() {
     catchShoe(values);
     navigate("/");
   };
-
   return (
-    <div className="d-flex w-100 vh-100 justify-content-center align-items-center bg-light">
-      <div className="w-50 border bg-white shadow px-5 pt-3 pb-5 rounded">
-        <h1>Update Shoe</h1>
+    <div className="d-flex w-100 vh-100 justify-content-center align-items-center bg-light main-form">
+      <div className="w-50  bg-white shadow px-5 pt-3 pb-5 rounded main-form">
+        <h1>Add new Shoe</h1>
         <form onSubmit={handleUpdate}>
           <div className="mb-2">
             <label htmlFor="model">Model:</label>

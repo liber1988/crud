@@ -5,7 +5,9 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  background-color: #f4f4f4;
+  background: linear-gradient(to bottom, #9433e4, #33011e);
+  color: white;
+  height: 100vh;
 }
 
 .home-content {
@@ -16,13 +18,13 @@
 
 .home-content h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #8d7676;
   margin-bottom: 1rem;
 }
 
 .home-content p {
   font-size: 1.2rem;
-  color: #666;
+  color: #ecd9d9;
   line-height: 1.6;
 }
 

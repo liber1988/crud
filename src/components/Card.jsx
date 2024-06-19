@@ -18,8 +18,8 @@ const Card = (shoe) => {
       <h3 className="card-title">{shoe.shoe.model}</h3>
       <img src={shoe.shoe.image} alt="Shoe" className="card-image" />
       <div>
-        <h2>Price: {shoe.shoe.price} ils</h2>
         <h2>{shoe.shoe.company}</h2>
+        <h2>Price: {shoe.shoe.price} ils</h2>
       </div>
       <div className="card-content">
         <div className="card-buttons">
