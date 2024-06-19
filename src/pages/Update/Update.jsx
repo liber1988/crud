@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useApiContext } from "../../context/ApiContext";
-
+import "./Update.css";
 function Update() {
   const { shoes, getShoe, updateShoe } = useApiContext();
   const { id } = useParams();
@@ -17,8 +17,8 @@ function Update() {
   };
 
   return (
-    <div className="d-flex w-100 vh-100 justify-content-center align-items-center bg-light">
-      <div className="w-50 border bg-white shadow px-5 pt-3 pb-5 rounded">
+    <div className="d-flex w-100 vh-100 justify-content-center align-items-center  body-container">
+      <div className="w-50 body-container shadow px-5 pt-3 pb-5 rounded">
         <h1>Update Shoe</h1>
         <form onSubmit={handleUpdate}>
           <div className="mb-2">

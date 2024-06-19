@@ -15,12 +15,14 @@ const Card = (shoe) => {
 
   return (
     <div className="card">
-      <h3 className="card-title">{shoe.shoe.model}</h3>
-      <img src={shoe.shoe.image} alt="Shoe" className="card-image" />
-      <div>
-        <h2>{shoe.shoe.company}</h2>
-        <h2>Price: {shoe.shoe.price} ils</h2>
-      </div>
+      <Link to={`/shoes/${shoe.shoe.id}`} className="card-link">
+        <h3 className="card-title">{shoe.shoe.model}</h3>
+        <img src={shoe.shoe.image} alt="Shoe" className="card-image" />
+        <div>
+          <h2>{shoe.shoe.company}</h2>
+          <h2>Price: {shoe.shoe.price} ils</h2>
+        </div>
+      </Link>
       <div className="card-content">
         <div className="card-buttons">
           <button className="card-button" onClick={() => handleDeleteClick()}>

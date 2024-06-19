@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* Shoe Detail Page */
+.shoe-detail-container {
+  display: flex;
+  height: 80vh;
+  width: 80vw;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.shoe-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
+  border-right: 1px solid #ddd;
+}
+
+.shoe-image img {
+  height: 75vh;
+  width: auto;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+}
+
+.shoe-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 40px;
+  background-color: #fff;
+}
+
+.shoe-company {
+  font-size: 3em;
+  margin: 0 0 20px;
+  color: #333;
+}
+
+.shoe-model {
+  font-size: 2.5em;
+  margin: 0 0 20px;
+  color: #555;
+}
+
+.shoe-price {
+  font-size: 2em;
+  margin: 0;
+  color: #777;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .shoe-info {
+    padding: 0 20px;
+  }
+  .shoe-company {
+    font-size: 2.5em;
+  }
+  .shoe-model {
+    font-size: 2em;
+  }
+  .shoe-price {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .shoe-detail-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .shoe-image {
+    width: 100%;
+    height: 50vh;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .shoe-image img {
+    height: 100%;
+    width: auto;
+    border-radius: 8px 8px 0 0;
+  }
+  .shoe-info {
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+  }
+  .shoe-company,
+  .shoe-model,
+  .shoe-price {
+    text-align: center;
+  }
+}
+h3 {
+  margin-bottom: 15px;
+}

@@ -69,7 +69,7 @@ function Create() {
               onChange={(e) => setValues({ ...values, image: e.target.value })}
             />
           </div>
-          <button className="btn btn-success">Update</button>
+          <button className="btn btn-success">Add</button>
           <Link to="/" className="btn btn-primary ms-3">
             Back
           </Link>

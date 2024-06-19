@@ -34,3 +34,10 @@ img {
   width: 150px;
   height: 50px;
 }
+.navbar-links a.active {
+  color: #c2baba;
+  text-decoration: overline;
+  font-size: 1rem;
+  transition: color 0.3s;
+  font-weight: bold;
+}
